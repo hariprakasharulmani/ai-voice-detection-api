@@ -1,0 +1,17 @@
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+# PyTorch - install separately if version conflicts occur
+# For CPU: pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+# For CUDA: pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu118
+torch
+torchaudio
+librosa>=0.10.1
+resampy>=0.4.2
+soundfile>=0.12.1
+httpx>=0.25.0
+python-multipart>=0.0.6
+aiofiles>=23.2.1
+python-dotenv>=1.0.0
+
