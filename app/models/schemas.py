@@ -1,21 +1,21 @@
 from pydantic import BaseModel, Field
-from typing import Literal
+from typing import Optional
 
 
 class Base64AudioRequest(BaseModel):
-    language: Literal["Tamil", "English", "Hindi", "Malayalam", "Telugu"]
-    audioFormat: Literal["mp3"]
-    audioBase64: str
+    language: str = Field(..., example="English")
+    audioFormat: str = Field(..., example="mp3")
+    audioBase64: str = Field(..., description="Base64 encoded MP3 audio")
 
 
 class VoiceDetectionResponse(BaseModel):
-    status: Literal["success"]
+    status: str = "success"
     language: str
-    classification: Literal["AI_GENERATED", "HUMAN"]
-    confidenceScore: float = Field(ge=0.0, le=1.0)
-    explanation: str
+    classification: str
+    confidenceScore: float
+    explanation: Optional[str] = None
 
 
 class ErrorResponse(BaseModel):
-    status: Literal["error"]
+    status: str = "error"
     message: str
