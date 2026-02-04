@@ -49,11 +49,15 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Model files (if large)
+# Model binaries (ignore large files)
 *.pth
 *.pt
 *.ckpt
-models/
+
+# Allow Python models package
+!app/models/
+!app/models/**/*.py
+
 
 # Audio files
 *.mp3
