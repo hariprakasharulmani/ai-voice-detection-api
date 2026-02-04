@@ -22,3 +22,9 @@ class ErrorResponse(BaseModel):
     """Error response model."""
     error: str = Field(..., description="Error message")
 
+from pydantic import BaseModel
+
+class Base64AudioRequest(BaseModel):
+    language: str
+    audio_format: str
+    audio_base64: str
