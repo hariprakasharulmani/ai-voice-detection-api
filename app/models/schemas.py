@@ -13,3 +13,4 @@ class VoiceDetectionResponse(BaseModel):
     classification: Literal["AI_GENERATED", "HUMAN"]
     confidenceScore: float
     explanation: str
+    
